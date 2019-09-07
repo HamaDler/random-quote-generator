@@ -1,11 +1,22 @@
 import React from "react";
 import LoginPage from "components/templates/LoginPage";
+import BurgerPage from "components/templates/BurgerPage";
+import { ThemeProvider } from "styled-components";
+
+const theme = {
+  colors: {
+    primary: "#d4136d"
+  }
+};
 
 function App() {
   return (
-    <div style={{ padding: 20 }}>
-      <LoginPage />
-    </div>
+    <ThemeProvider theme={theme}>
+      <div style={{ padding: 20 }}>
+        <LoginPage />
+        <BurgerPage />
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -4,7 +4,6 @@ import Button from "./Button";
 import { action } from "@storybook/addon-actions";
 import { withKnobs, select, boolean } from "@storybook/addon-knobs";
 
-// You can see this as "folders" in Storybook's sidebar
 const stories = storiesOf("atoms/Button", module);
 
 stories.addDecorator(withKnobs);
