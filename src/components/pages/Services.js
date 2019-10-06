@@ -1,5 +1,6 @@
-import PropTypes from "prop-types";
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import {
   Button,
   Container,
@@ -33,7 +34,7 @@ const HomepageHeading = ({ mobile }) => (
   <Container text>
     <Header
       as="h1"
-      content="Imagine-a-Company"
+      content="DutyLead"
       inverted
       style={{
         fontSize: mobile ? "2em" : "4em",
@@ -44,7 +45,7 @@ const HomepageHeading = ({ mobile }) => (
     />
     <Header
       as="h2"
-      content="Do whatever you want when you want to."
+      content="Experts on demand."
       inverted
       style={{
         fontSize: mobile ? "1.5em" : "1.7em",
@@ -53,7 +54,7 @@ const HomepageHeading = ({ mobile }) => (
       }}
     />
     <Button primary size="huge">
-      Get Started
+      Start Your Project
       <Icon name="right arrow" />
     </Button>
   </Container>
@@ -98,12 +99,18 @@ class DesktopContainer extends Component {
               size="large"
             >
               <Container>
-                <Menu.Item as="a" active>
-                  Home
+                <Menu.Item as="a">
+                  {" "}
+                  <Link to="/">Home</Link>
                 </Menu.Item>
-                <Menu.Item as="a">Work</Menu.Item>
-                <Menu.Item as="a">Company</Menu.Item>
-                <Menu.Item as="a">Careers</Menu.Item>
+                <Menu.Item as="a">
+                  {" "}
+                  <Link to="/howitworks">How It Works</Link>
+                </Menu.Item>
+                <Menu.Item as="a" active>
+                  Services
+                </Menu.Item>
+
                 <Menu.Item position="right">
                   <Button as="a" inverted={!fixed}>
                     Log in
@@ -163,7 +170,6 @@ class MobileContainer extends Component {
           </Menu.Item>
           <Menu.Item as="a">Work</Menu.Item>
           <Menu.Item as="a">Company</Menu.Item>
-          <Menu.Item as="a">Careers</Menu.Item>
           <Menu.Item as="a">Log in</Menu.Item>
           <Menu.Item as="a">Sign Up</Menu.Item>
         </Sidebar>

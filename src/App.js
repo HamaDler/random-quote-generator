@@ -1,21 +1,22 @@
 import React from "react";
-import LoginPage from "components/templates/LoginPage";
-import BurgerPage from "components/templates/BurgerPage";
-import HomepageLayout from "components/pages/Home";
-
-// const theme = {
-//   colors: {
-//     primary: "#d4136d"
-//   }
-// };
+import HomePage from "./components/pages/HomePage";
+import HowItWorks from "./components/pages/HowItWorks";
+import Services from "./components/pages/Services";
+import Login from "./components/pages/Login";
+import SignUp from "./components/pages/SignUp";
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 
 function App() {
   return (
-    <div style={{ padding: 0 }}>
-      <HomepageLayout />
-      <LoginPage />
-      <BurgerPage />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route path="/howitworks" component={HowItWorks} />
+        <Route path="/services" component={Services} />
+        <Route path="/login" component={Login} />
+        <Route path="/signup" component={SignUp} />
+      </Switch>
+    </Router>
   );
 }
 
